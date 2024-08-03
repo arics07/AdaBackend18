@@ -29,25 +29,25 @@ if (codidoDeDescuento === "si"){
 };
 
 if (destino === "Madrid"){
-    let costoViajeTotal = costoPasajesMadrid*cantidadPasajes + cantidadValijas;
+    let costoViajeTotal = costoPasajesMadrid*cantidadPasajes + cantidadValijas*costoPorValija;
     if (!descuentoValido) {
         console.log("El precio total del viaje es de: " + costoViajeTotal);
     } else {
-        console.log("El precio total del viaje es de: " + costoViajeTotal*(descuentoMadrid/100));
+        console.log("El precio total del viaje es de: " + (costoViajeTotal - costoViajeTotal*(descuentoMadrid/100)));
     };
 } else if (destino === "Dubai"){
-    let costoViajeTotal = costoPasajesDubai*cantidadPasajes + cantidadValijas;
+    let costoViajeTotal = costoPasajesDubai*cantidadPasajes + cantidadValijas*costoPorValija;
     if (!descuentoValido) {
         console.log("El precio total del viaje es de: " + costoViajeTotal);
     } else {
-        console.log("El precio total del viaje es de: " + costoViajeTotal*(descuentoDubai/100));
+        console.log("El precio total del viaje es de: " + (costoViajeTotal - costoViajeTotal*(descuentoDubai/100)));
     };
 } else if (destino === "Montevideo"){
-    let costoViajeTotal = costoPasajeMontevideo*cantidadPasajes + cantidadValijas;
+    let costoViajeTotal = costoPasajeMontevideo*cantidadPasajes + cantidadValijas*costoPorValija;
     if (!descuentoValido) {
         console.log("El precio total del viaje es de: " + costoViajeTotal);
     } else {
-        console.log("El precio total del viaje es de: " + costoViajeTotal*(descuentoMontevideo/100));
+        console.log("El precio total del viaje es de: " + (costoViajeTotal - costoViajeTotal*(descuentoMontevideo/100)));
     };
 };
 
