@@ -4,7 +4,7 @@ Crear una función que convierta pulgadas en centímetros.
 Recibe por parámetro pulgadas y retorna su equivalente en centímetros.
 */
 
-const promt = require("prompt sync")({ sight: true});
+const prompt = require("prompt-sync")({ sigint: true });
 
 let pulgadas = parseFloat(promt('Ingrese pulgadas: '));
 
