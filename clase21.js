@@ -125,7 +125,7 @@ function devolverMascota(idMascota, idPropietario) {
 //Implementar una función menuPrincipal() 
 //que muestre un menú de opciones al usuario y permita interactuar con el sistema utilizando prompt().
 
-const promt = require("prompt-sync")({ sigint: true });
+const prompt = require("prompt-sync")({ sigint: true });
 
 function menuPrincipal(){
 
@@ -138,51 +138,52 @@ function menuPrincipal(){
     console.log("5. ADOPTAR UNA MASCOTA");
     console.log("6. DEVOLVER UNA MASCOTA");
 
-    let opcion = parseInt(promt("Ingrese el número de la opción que desea ejecutar"));
+    let opcion = parseInt(prompt("Ingrese el número de la opción que desea ejecutar"));
 
     switch(opcion){
         case 1:
-            let nombre = promt("Ingrese el nombre de la mascota: ");
-            let especie = promt("Ingrese la especie de la mascota: ");
-            let edad= parseInt(promt("Ingrese la edad de la mascota: "));
+            let nombre = prompt("Ingrese el nombre de la mascota: ");
+            let especie = prompt("Ingrese la especie de la mascota: ");
+            let edad= parseInt(prompt("Ingrese la edad de la mascota: "));
             agregarMascota(nombre, especie, edad);
             console.log(mascotas);
             break;
         case 2:
             console.log("1. Buscar por nombre: ");
             console.log("2. Buscar por especie: ");
-            let opc = parseInt(promt("Ingrese la opción del criterio para buscar la mascota: "));
+            let opc = parseInt(prompt("Ingrese la opción del criterio para buscar la mascota: "));
             if (opc === 1) {
-                let nombr = promt("Ingrese el nombre de la mascota: ");
+                let nombr = prompt("Ingrese el nombre de la mascota: ");
                 buscarMascota("nombre", nombr);
             } else if (opc ===2) {
-                let esp = promt("Ingrese la especie de la mascota: ");
+                let esp = prompt("Ingrese la especie de la mascota: ");
                 buscarMascota("especie", esp);
             } else {
                 console.log("La opción no es correcta");
             };
             break;
         case 3:
-            let nombrePropietario = promt("Ingrese el nombre del propietario: ");
-            let mailPropietario = promt("Ingrese el mail del propietario: ");
+            let nombrePropietario = prompt("Ingrese el nombre del propietario: ");
+            let mailPropietario = prompt("Ingrese el mail del propietario: ");
             registrarPropietario(nombrePropietario, mailPropietario);
             break;
         case 4:
-            let mailProp = promt("Ingrese el mail del propietario que busca: ");
+            let mailProp = prompt("Ingrese el mail del propietario que busca: ");
             buscarPropietario(mailProp);
             break;
         case 5:
-            let idProp = parseInt(promt("Ingrese el id del propietario: "));
-            let idMasc = parseInt(promt("Ingrese el id de la mascota: "));
+            let idProp = parseInt(prompt("Ingrese el id del propietario: "));
+            let idMasc = parseInt(prompt("Ingrese el id de la mascota: "));
             adoptarMascota(idMasc, idProp);
             break;
         case 6:
-            let idPropiet = parseInt(promt("Ingrese el id del propietario: "));
-            let idMascot = parseInt(promt("Ingrese el id de la mascota: "));
+            let idPropiet = parseInt(prompt("Ingrese el id del propietario: "));
+            let idMascot = parseInt(prompt("Ingrese el id de la mascota: "));
             devolverMascota(idMascot, idPropiet);
             break;
         default:
             console.log("La opción ingresada no es correcta.");
+            break
     }
 
 }
