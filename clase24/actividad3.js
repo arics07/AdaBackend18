@@ -8,7 +8,7 @@
 
 
 // En actividad3.js, importa el objeto usando require().
-const {curso} = require('./datos.js');
+const { curso } = require('./datos.js');
 
 // Muestra en la consola la información del curso.
 console.log(curso);
