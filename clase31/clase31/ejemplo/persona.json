@@ -1,0 +1,10 @@
+{
+    "nombre": "Ariadna",
+    "esEstudiante": true,
+    "hobbies": ["tenis", "leer"],
+    "direccion": {
+        "ciudad": "Roma",
+        "pais": "Italia",
+        "calle": "Via Verdi"
+    }
+}
