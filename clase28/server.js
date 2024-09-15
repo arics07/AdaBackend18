@@ -48,12 +48,21 @@ const server = net.createServer((socket) => {
             saveHistory(history);
         };
     });
+
+    socket.on('error', (err) => {
+        console.log("Error: " + err.message);
+    });
+    
+    // Manejamos la desconexión del cliente
+    socket.on('end', () => {
+        console.log('Cliente desconectado: ', socket.remoteAddress);
+        clients = clients.filter(client => client !== socket)
+    });
+    
 });
 
-// Manejamos la desconexión del cliente
-socket.on('end', () => {
-    console.log('Cliente desconectado: ', socket.remoteAddress);
-    clients = clients.filter(client => client !== socket)
+server.listen(PORT, () => {
+    console.log("Escuchando desde el puerto " + server.address().port);
 });
 
 
